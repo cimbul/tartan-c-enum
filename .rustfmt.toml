@@ -1,0 +1,7 @@
+# Wrapping
+max_width = 90
+use_small_heuristics = "Max"
+
+# Other
+use_field_init_shorthand = true
+use_try_shorthand = true
