@@ -1,9 +1,22 @@
 # Tartan C Enum
 
-Support for C-style enums that support unknown values.
+A simple macro to define FFI-safe enums that support unknown values.
+
+Rust's `enum` types trigger undefined behavior when they are assigned unknown
+discriminant values (e.g., through a pointer cast or transmutation). While this
+enables useful complier optimizations, it also means that `enum`s are not safe for use
+in FFI, since C treats enums as integral types that can take any value within range of
+the underlying integer type.
+
+This crate offers an alternative kind of enumeration which is more similar to C.
+Enumerations defined with the `c_enum` macro are simple wrappers for an integer type.
+Known variants are defined as constants, and can be associated with their names
+defined in code (e.g., for `Debug` output), but unknown values are fully supported.
+Since they have transparent representations, they do not trigger undefined behavior
+when transmuting from arbitrary values (as long as you use a built-in integer type)
+and are safe to use in FFI structs and functions.
 
 ```rust
-#
 c_enum! {
     pub enum Example(u16) {
         Foo,
@@ -44,19 +57,9 @@ unsafe {
 }
 ```
 
-Rust's `enum` types trigger undefined behavior when they are assigned unknown
-discriminant values (e.g., through a pointer cast or transmutation). While this
-enables useful complier optimizations, it also means that `enum`s are not safe for use
-in FFI, since C treats enums as integral types that can take any value within range of
-the underlying integer type.
-
-This crate offers an alternative kind of enumeration which is more similar to C.
-Enumerations defined with the `c_enum` macro are simple wrappers for an integer type.
-Known variants are defined as constants, and can be associated with their names
-defined in code (e.g., for `Debug` output), but unknown values are fully supported.
-Since they have transparent representations, they do not trigger undefined behavior
-when transmuting from arbitrary values (as long as you use a built-in integer type)
-and are safe to use in FFI structs and functions.
+For lots more examples, see the [Tartan OS](https://github.com/cimbul/tartan-os)
+project that this crate was spun off from. This macro also works well in combination
+with the [Tartan Bitfield](https://github.com/cimbul/tartan-bitfield) crate.
 
 ## Installation
 
