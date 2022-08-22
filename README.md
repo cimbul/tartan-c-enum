@@ -71,7 +71,7 @@ with the [Tartan Bitfield](https://github.com/cimbul/tartan-bitfield) crate.
 Add to your Cargo.toml:
 ```
 [dependencies]
-tartan-c-enum = 0.1.0
+tartan-c-enum = 1.0.0
 ```
 
 ## Development
