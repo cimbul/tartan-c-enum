@@ -1,5 +1,10 @@
 # Tartan C Enum
 
+[![Crate](https://img.shields.io/crates/v/tartan-c-enum)](https://crates.io/crates/tartan-c-enum)
+[![Docs](https://img.shields.io/docsrs/tartan-c-enum)](https://docs.rs/tartan-c-enum)
+[![Build](https://github.com/cimbul/tartan-c-enum/actions/workflows/build.yml/badge.svg)](https://github.com/cimbul/tartan-c-enum/actions/workflows/build.yml)
+![License](https://img.shields.io/crates/l/tartan-c-enum)
+
 {{readme}}
 
 ## Installation

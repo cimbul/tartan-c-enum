@@ -1,5 +1,10 @@
 # Tartan C Enum
 
+[![Crate](https://img.shields.io/crates/v/tartan-c-enum)](https://crates.io/crates/tartan-c-enum)
+[![Docs](https://img.shields.io/docsrs/tartan-c-enum)](https://docs.rs/tartan-c-enum)
+[![Build](https://github.com/cimbul/tartan-c-enum/actions/workflows/build.yml/badge.svg)](https://github.com/cimbul/tartan-c-enum/actions/workflows/build.yml)
+![License](https://img.shields.io/crates/l/tartan-c-enum)
+
 A simple macro to define FFI-safe enums that support unknown values.
 
 Rust's `enum` types trigger undefined behavior when they are assigned unknown
